@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servo Control</title>
+</head>
+<body>
+    <h1>Control Servo</h1>
+    <button id="rotate-button">Rotate Servo</button>
+
+    <script>
+        document.getElementById('rotate-button').onclick = function() {
+            fetch('http://YOUR_ESP8266_IP/rotate')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Servo rotated');
+                    } else {
+                        console.error('Error rotating servo');
+                    }
+                });
+        };
+    </script>
+</body>
+</html>
